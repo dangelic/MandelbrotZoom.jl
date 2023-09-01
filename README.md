@@ -70,7 +70,7 @@ include("MandelbrotZoom.jl")  # Replace with the actual name of your Julia scrip
 
 ## Acknowledgements
 
-Got my code inspiration from opensources (YT) explanation of the Mandelbrot code in Julia: [opersources YouTube Channel](https://www.youtube.com/watch?v=xVLxTk3SqsA)https://www.youtube.com/watch?v=xVLxTk3SqsA)
+Got my code inspiration from opensources (YT) explanation of the Mandelbrot code in Julia: [opersources YouTube Channel](https://www.youtube.com/watch?v=xVLxTk3SqsA)
 
 Got the idea for Zooming and how I might do it from Alex Carney (YT) who explains it for P5.js: [Alex Carney YouTube Channel](https://www.youtube.com/watch?v=ixFCsST2pF4)
 
