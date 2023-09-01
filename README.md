@@ -1,6 +1,7 @@
 # Mandelbrot Set Generator
 
 ![Mandelbrot Set](mandelbrot_set_static.bmp)
+![Mandelbrot Set](mandelbrot_set_zoomed.bmp)
 
 ## Description
 
