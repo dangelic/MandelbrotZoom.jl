@@ -46,7 +46,7 @@ end
 
 # TODO: Refactor, add zoom
 function main()
-    colorscheme = ColorSchemes.plasma # Change to thermal, hawaii, berlin or any other found at https://docs.juliaplots.org/latest/generated/colorschemes/
+    colorscheme = ColorSchemes.plasma # Change to matter, thermal, hawaii, berlin or any other found at https://docs.juliaplots.org/latest/generated/colorschemes/
     img_out = "mandelbrot_set_nozoom.bmp"
     max_iterations = 50 # Threshold for max loops until z - for given values - is considered as non-divergent.
     # y-axis => complex numbers
