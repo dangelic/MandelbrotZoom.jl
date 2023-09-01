@@ -22,7 +22,7 @@ The program iterates this formula until one of two conditions is met:
 1. The absolute value of `z_n` becomes larger than a predefined threshold (e.g., 3), indicating that the point is likely *not* in the Mandelbrot Set, and the iteration is terminated. => Points are colored based on how many iterations we need to exceed the threshold (colormap).
 2. The maximum number of iterations is reached without `z_n` exceeding the threshold, in which case the point is assumed to be in the Mandelbrot Set. => Points turn black.
 
-For further information, refer to: [Mandelbrot Universität Leipzig]([https://link-url-here.org](https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/html/mndlbrt.htm))
+For further information, refer to: [Mandelbrot Universität Leipzig](https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/html/mndlbrt.htm)
 
 ## How the Code Works
 
