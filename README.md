@@ -19,8 +19,10 @@ Where:
 - `c` is the complex number corresponding to the point being tested.
 
 The program iterates this formula until one of two conditions is met:
-1. The absolute value of `z_n` becomes larger than a predefined threshold (e.g., 3), indicating that the point is likely *not* in the Mandelbrot Set, and the iteration is terminated. => Points are colored based on how many iterations we need to exceed the threshold (colormap.)
+1. The absolute value of `z_n` becomes larger than a predefined threshold (e.g., 3), indicating that the point is likely *not* in the Mandelbrot Set, and the iteration is terminated. => Points are colored based on how many iterations we need to exceed the threshold (colormap).
 2. The maximum number of iterations is reached without `z_n` exceeding the threshold, in which case the point is assumed to be in the Mandelbrot Set. => Points turn black.
+
+For further information, refer to: [Mandelbrot Universität Leipzig](https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/html/mndlbrt.htm)
 
 ## How the Code Works
 
@@ -65,3 +67,12 @@ include("MandelbrotZoom.jl")  # Replace with the actual name of your Julia scrip
 ```
 
 5. The generated Mandelbrot Set image will be saved as **mandelbrot_set_nozoom.bmp**.
+
+## Acknowledgements
+
+Got my code inspiration from opensources (YT) explanation of the Mandelbrot code in Julia: [opersources YouTube Channel](https://www.youtube.com/watch?v=xVLxTk3SqsA)
+
+Got the idea for Zooming and how I might do it from Alex Carney (YT) who explains it for P5.js: [Alex Carney YouTube Channel](https://www.youtube.com/watch?v=ixFCsST2pF4)
+
+TY :-)
+
