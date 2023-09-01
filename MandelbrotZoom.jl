@@ -37,7 +37,7 @@ function get_image(colorscheme, width, height, real_axis_min, real_axis_max, ima
             imaginary_part = imaginary_axis_max - (y - 1) * point_size
             c = Complex(real_part, imaginary_part)
             # Color the pixels.
-            image[y, x] = get_color(colorscheme, calculate_divergence_iterations(c, max_iterations), max_iterations)
+            image[y, x] = get_rbg(colorscheme, calculate_divergence_iterations(c, max_iterations), max_iterations)
         end
     end
     return image
