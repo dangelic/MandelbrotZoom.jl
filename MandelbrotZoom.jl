@@ -5,7 +5,7 @@ function calculate_divergence_iterations(c::Complex, max_iterations)
     z = Complex(0.0, 0.0)
     for iterations_to_divergence = 1:max_iterations
         z = z * z + c
-        if abs2(z) > 3 # Consider > 3 as an indicator for z to diverge
+        if abs2(z) >= 4 # Consider > 3 as an indicator for z to diverge
             return iterations_to_divergence
         end
     end
@@ -13,15 +13,16 @@ function calculate_divergence_iterations(c::Complex, max_iterations)
 end
 
 # Get color-coding depending on divergence rules.
-function get_rgb(colorscheme, iteration, max_iterations)
-    if step == Inf
+function get_rgb(colorscheme, iterations_to_divergence, max_iterations)
+    if iterations_to_divergence == Inf
         return RGB(0.0, 0.0, 0.0)  # Black for points that didn't diverge
     end
-    factor = iteration / max_iterations # Scale [0, 1] to shade the "velocity" of divergence
+    factor = iterations_to_divergence / max_iterations # Scale [0, 1] to shade the "velocity" of divergence
     rgb = get(colorscheme, factor) 
     return rgb
 end
 
+# Paints an image.
 # Paints an image.
 function get_image(colorscheme, width, height, real_axis_min, real_axis_max, imaginary_axis_min, max_iterations)
 
@@ -37,7 +38,7 @@ function get_image(colorscheme, width, height, real_axis_min, real_axis_max, ima
             imaginary_part = imaginary_axis_max - (y - 1) * point_size
             c = Complex(real_part, imaginary_part)
             # Color the pixels.
-            image[y, x] = get_rbg(colorscheme, calculate_divergence_iterations(c, max_iterations), max_iterations)
+            image[y, x] = get_rgb(colorscheme, calculate_divergence_iterations(c, max_iterations), max_iterations)
         end
     end
     return image
@@ -46,9 +47,9 @@ end
 
 # TODO: Refactor, add zoom
 function main()
-    colorscheme = ColorSchemes.plasma # Change to matter, thermal, hawaii, berlin or any other found at https://docs.juliaplots.org/latest/generated/colorschemes/
+    colorscheme = ColorSchemes.inferno # Change to matter, thermal, hawaii, berlin or any other found at https://docs.juliaplots.org/latest/generated/colorschemes/
     img_out = "mandelbrot_set_static.bmp"
-    max_iterations = 50 # Threshold for max loops until z - for given values - is considered as non-divergent.
+    max_iterations = 100 # Threshold for max loops until z - for given values - is considered as non-divergent.
     # y-axis => complex numbers
     # x-axis => real numbers
     width = 1000
